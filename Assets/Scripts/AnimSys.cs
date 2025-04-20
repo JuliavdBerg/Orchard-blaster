@@ -8,17 +8,8 @@ public class AnimSys : MonoBehaviour
 
     void Start()
     {
-        PlayerScript = FindObjectOfType<PlayerScript>();
-        if (PlayerScript == null)
-        {
-            Debug.LogError("PlayerScript not found!");
-        }
-
+        PlayerScript = FindFirstObjectByType<PlayerScript>();
         animator = GetComponent<Animator>();
-        if (animator == null)
-        {
-            Debug.LogError("Animator not found!");
-        }
     }
 
     void Update()
@@ -26,14 +17,18 @@ public class AnimSys : MonoBehaviour
         // Check if the player is grounded and not moving
         if (PlayerScript.isGrounded == true && PlayerScript.walking == false)
         {
-            animator.Play("idle");
+            animator.Play("Idle");
             Debug.Log("Player is idle");
         }
-
-        if (PlayerScript.walking == true)
+        if (PlayerScript.walking == true && PlayerScript.isGrounded == true)
         {
-            animator.Play("walk");
+            animator.Play("Walk");
             Debug.Log("Player is walking");
+        }
+        if (PlayerScript.isGrounded == false)
+        {
+            animator.Play("Jump");
+            Debug.Log("Player is jumping");
         }
     }
 }

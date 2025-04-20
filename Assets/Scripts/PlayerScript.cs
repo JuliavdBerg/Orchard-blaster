@@ -12,7 +12,7 @@ public class PlayerScript : MonoBehaviour
     private bool lookingLeft;
     public bool walking;
 
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     private Animator animator; // Declare Animator
 
 
@@ -72,13 +72,10 @@ public class PlayerScript : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision) // ground check
     {
-        if (!collision.gameObject.CompareTag("Ground")) // player collides with the ground
+        if (collision.gameObject.CompareTag("Ground")) // player collides with the ground
         {
-            isGrounded = false; // player touches the ground is true, so she can jump again
+            isGrounded = true; // player touches the ground is true, so she can jump again
         }
-        else
-        {
-            isGrounded = true;
-        }
+       
     }
 }
