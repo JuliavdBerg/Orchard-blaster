@@ -15,10 +15,6 @@ public class PlayerScript : MonoBehaviour
     private Rigidbody2D rb;
     private Animator animator; // Declare Animator
 
-
- 
-
-
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -76,6 +72,9 @@ public class PlayerScript : MonoBehaviour
         {
             isGrounded = true; // player touches the ground is true, so she can jump again
         }
-       
+       if (collision.gameObject.CompareTag("enemy") )
+        {
+            
+        }
     }
 }

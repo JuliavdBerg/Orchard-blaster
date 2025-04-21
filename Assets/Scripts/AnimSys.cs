@@ -18,17 +18,14 @@ public class AnimSys : MonoBehaviour
         if (PlayerScript.isGrounded == true && PlayerScript.walking == false)
         {
             animator.Play("Idle");
-            Debug.Log("Player is idle");
         }
         if (PlayerScript.walking == true && PlayerScript.isGrounded == true)
         {
             animator.Play("Walk");
-            Debug.Log("Player is walking");
         }
         if (PlayerScript.isGrounded == false)
         {
             animator.Play("Jump");
-            Debug.Log("Player is jumping");
         }
     }
 }
