@@ -21,11 +21,19 @@ public class FoxEnemy : MonoBehaviour
             FlipSprite();
         }
     }
-
     void FlipSprite()
     {
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("apple bullet"))
+        {
+            Debug.Log("fox hit");
+            Destroy(gameObject);
+        }
     }
 }
