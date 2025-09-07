@@ -6,25 +6,31 @@ using System.Runtime.CompilerServices;
 public class PlayerScript : MonoBehaviour
 {
     Health health;
+    private Rigidbody2D rb;
+    private Animator animator; // Declare Animator
 
     [SerializeField] private float horizontalSpeed;
     [SerializeField] private float verticalSpeed;
+    [SerializeField] private float bulletSpeed;
     [SerializeField] GameObject playerShield;
     [SerializeField] GameObject bulletSpawn;
     [SerializeField] GameObject appleBullet;
-    [SerializeField] private float bulletSpeed;
 
-    private float bulletCooldown = 1f; // Renamed to bulletCooldown
+    private float bulletCooldown = 1f;
     private float shieldDuration = 3.5f;
     [SerializeField] private float ShieldTimer;
 
     public bool isGrounded = true; // used in the animsys script
-    private bool lookingRight;
     private bool lookingLeft;
-    public bool walking;
+    public bool walking; 
 
-    private Rigidbody2D rb;
-    private Animator animator; // Declare Animator
+    public enum PlayerState
+    {
+        idle,
+        walking,
+        jumping
+    }
+
 
     void Start()
     {
@@ -35,7 +41,6 @@ public class PlayerScript : MonoBehaviour
         animator = GetComponent<Animator>();
         health = GetComponent<Health>();
         lookingLeft = true;
-        lookingRight = false;
     }
 
     void Update()
@@ -51,14 +56,12 @@ public class PlayerScript : MonoBehaviour
         {
             transform.position += new Vector3(-horizontalSpeed * Time.deltaTime, 0, 0);
             lookingLeft = true;
-            lookingRight = false;
             walking = true;
         }
 
         if (Input.GetKey(KeyCode.D)) // move to the right
         {
             transform.position += new Vector3(horizontalSpeed * Time.deltaTime, 0, 0);
-            lookingRight = true;
             lookingLeft = false;
             walking = true;
         }
@@ -72,7 +75,7 @@ public class PlayerScript : MonoBehaviour
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); // ensure the sprite faces left
         }
-        if (lookingRight) // look to the right
+        if (!lookingLeft) // look to the right
         {
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z); // ensure the sprite faces right
         }
@@ -116,7 +119,7 @@ public class PlayerScript : MonoBehaviour
             GameObject bullet = Instantiate(appleBullet, bulletSpawn.transform.position, bulletSpawn.transform.rotation);
             Rigidbody2D bulletRb = bullet.GetComponent<Rigidbody2D>();
 
-            if (lookingRight)
+            if (!lookingLeft)
             {
                 bulletRb.linearVelocity = new Vector2(bulletSpeed, 0); // Move bullet to the right
             }
