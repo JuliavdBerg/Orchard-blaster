@@ -11,6 +11,12 @@ public class SceneSys : MonoBehaviour
     public void GoToGame()
     {
         // Load the game scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Game");
+    }
+
+    public void GoToMenu()
+    {
+        // Load the main menu scene
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 }

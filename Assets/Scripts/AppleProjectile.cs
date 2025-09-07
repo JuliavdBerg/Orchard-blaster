@@ -12,7 +12,6 @@ public class Projectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
     }
-
     void Update()
     {
         destroyTimer += Time.deltaTime;
