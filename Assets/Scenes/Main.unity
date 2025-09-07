@@ -252,12 +252,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1065330}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.4, y: -3.417, z: 0}
-  m_LocalScale: {x: 0.109168544, y: 0.109168544, z: 0.109168544}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -131.73799, y: -45.14896, z: 0}
+  m_LocalScale: {x: 1.04064, y: 1.0850276, z: 0.680384}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1505520143}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1065336
 MonoBehaviour:
@@ -1490,6 +1490,7 @@ Transform:
   - {fileID: 1022936085}
   - {fileID: 868416262}
   - {fileID: 33080083}
+  - {fileID: 1065335}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1505520144
@@ -2057,10 +2058,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2315,7 +2316,6 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1837657611}
   - {fileID: 1505520143}
-  - {fileID: 1065335}
   - {fileID: 85594462}
   - {fileID: 1906032183}
   - {fileID: 1881522881}
