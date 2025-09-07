@@ -253,11 +253,11 @@ Transform:
   m_GameObject: {fileID: 1065330}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -131.73799, y: -45.14896, z: 0}
-  m_LocalScale: {x: 1.04064, y: 1.0850276, z: 0.680384}
+  m_LocalPosition: {x: -7.3999996, y: -3.4170003, z: 0}
+  m_LocalScale: {x: 0.109168544, y: 0.10916855, z: 0.10916854}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1505520143}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1065336
 MonoBehaviour:
@@ -1490,7 +1490,6 @@ Transform:
   - {fileID: 1022936085}
   - {fileID: 868416262}
   - {fileID: 33080083}
-  - {fileID: 1065335}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1505520144
@@ -1507,10 +1506,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   horizontalSpeed: 7
   verticalSpeed: 12
+  bulletSpeed: 20
   playerShield: {fileID: 1022936084}
   bulletSpawn: {fileID: 868416261}
   appleBullet: {fileID: 6599614525048032028, guid: e446c806a6e0fac438fa2ed73867ec9f, type: 3}
-  bulletSpeed: 20
   ShieldTimer: 3.5
   isGrounded: 1
   walking: 0
@@ -2317,6 +2316,7 @@ SceneRoots:
   - {fileID: 1837657611}
   - {fileID: 1505520143}
   - {fileID: 85594462}
+  - {fileID: 1065335}
   - {fileID: 1906032183}
   - {fileID: 1881522881}
   - {fileID: 883982622}
