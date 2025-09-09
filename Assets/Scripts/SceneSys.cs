@@ -23,7 +23,6 @@ public class SceneSys : MonoBehaviour
     }
     public void GoToMenu()
     {
-        // Load the main menu scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Start");
     }
 }
